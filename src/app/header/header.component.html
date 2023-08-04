@@ -1,0 +1,35 @@
+<!-- <p>header works!</p> -->
+
+
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-light  text-white">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand text-dark" routerLink=""><img width="50px" src="https://img.freepik.com/premium-vector/food-hunter-logo-template-design_316488-1781.jpg?w=2000" alt="Nav-logo"> &nbsp; Food <span> Hunter</span> </a>
+        
+        <div class="col-4">
+          <!-- Search -->
+          <input (keyup)="search($event)" type="text" class="form-control" placeholder="Search your Item">
+        </div>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto my-2 my-lg-0 ">
+                <li class="nav-item "><a class="nav-link" routerLink="/products/all-about">About</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" routerLink="/products/all-services">Services</a></li> -->
+                <li class="nav-item"><a class="nav-link" routerLink="/products/all-portfolio">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/products/all-contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/products/wishlist"><i class="fa-solid fa-heart fa-beat text-danger me-1"></i>Favorite</a></li>
+            </ul>
+          
+          <!-- Cart -->
+            <button class="btn btn-outline-dark" type="submit" routerLink="/products/cart">
+                <i class="fa-solid fa-cart-plus me-1"></i>
+                Cart
+                <span class="badge bg-dark text-danger ms-1 rounded-pill">{{cartItemsCount}}</span>
+              </button>
+        </div>   
+        
+    </div>
+</nav>
+
+

@@ -1,0 +1,206 @@
+/* navbar */
+
+
+.navbar{
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(121, 117, 117, 0.796);
+    z-index: 1;
+}
+
+.navbar-brand{
+    font-family: 'Kablammo', cursive; 
+}
+.navbar-brand:hover{
+    font-family: 'Kablammo', cursive;
+    transform: scale(1.2);
+}
+
+.navbar-nav .nav-link:hover{
+    font-weight: bolder;
+    color:  #f9004d;
+    transform: scale(1.2);
+}
+
+span{
+    color: #f9004d;
+    font-family: 'Kablammo', cursive;
+    
+}
+
+.wish:hover{
+    color: #f9004d;  
+}
+
+
+
+
+.btn:hover{
+    color:  #f9004d;
+}
+
+
+
+/* background */
+
+.container1{
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px; 
+    background-image: url('https://i.pinimg.com/564x/49/b9/e4/49b9e434eab32fccad399b0afdebbc7e.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow-x: hidden;
+}
+
+
+
+/* table 1 */
+
+
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table th, .cart-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.cart-table th {
+    background-color: #f2f2f2;
+}
+
+.product-image {
+    width: 100px;
+    height: auto;
+}
+
+
+
+
+
+
+
+/* table 2 */
+.col-3 {
+    background-color:whitesmoke;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 15px;
+    height: auto; /* Add this line to fix the height of the promo-card */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.promo-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.promo-code {
+    font-size: 36px;
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.promo-discount {
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+/* discount */
+
+        /* part1 */
+
+    /* Container styles */
+.container {
+    max-width: 100%;
+    padding: 20px;
+  }
+  
+  /* Brand section styles */
+  #left {
+    display: flex;
+    align-items: center;
+  }
+  
+  #image-section img {
+    max-width: 50px;
+  }
+  
+  .brand {
+    padding-left: 20px;
+  }
+  
+  #coupon .h4 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  h1 {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .pl-md-4 {
+    padding-left: 1.5rem; /* Adjust the value as needed */
+  }
+  
+  .pl-sm-2 {
+    padding-left: 1rem; /* Adjust the value as needed */
+  }
+  
+  /* Line divider styles */
+  #line {
+    border-top: 2px solid #000;
+    margin: 30px auto;
+  }
+  
+  /* Offer section styles */
+  #offer {
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 20px;
+  }
+  
+  #offer-description {
+    font-size: 16px;
+  }
+  
+  /* Expiry date styles */
+  #expiry {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .px-3 {
+    padding: 0 3px; /* Adjust the value as needed */
+  }
+  

@@ -1,0 +1,126 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand text-white" routerLink="">
+            <img width="50px" src="https://img.freepik.com/premium-vector/food-hunter-logo-template-design_316488-1781.jpg?w=2000" alt="Nav-logo">
+            &nbsp; Food <span>Hunter</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/register">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<!-- Register -->
+<div class="container1">
+    <div class="row">
+        <div class="col-6">
+            <!-- Image -->
+            <img height="600px" width="700px" src="https://i.pinimg.com/564x/00/a6/43/00a64353ce37a293ec5e9875f52aab5c.jpg" alt="">
+        </div>
+        <div class="col-6">
+            <!-- Register Form -->
+            <form class="border rounded shadow p-5 m-5" [formGroup]="registerForm">
+                <h3 class="text-center text-danger">Register here</h3>
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="fname" formControlName="fname" class="form-control" placeholder="Username" required  >
+                    <label for="username">Username</label>
+                    <div *ngIf="this.registerForm.get('fname')?.errors && this.registerForm.get('fname')?.touched"
+              class="text-danger">invalid username
+            </div>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="email" name="email" formControlName="email" class="form-control" placeholder="Email" required>
+                    <label for="email">Email</label>
+                    <div *ngIf="this.registerForm.get('email')?.errors && this.registerForm.get('email')?.touched"
+              class="text-danger">invalid email
+            </div>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="tel" name="mobile" formControlName="mobile" class="form-control" placeholder="Mobile Number" required>
+                    <label for="phone">Mobile Number</label>
+                    <div *ngIf="this.registerForm.get('mobile')?.errors && this.registerForm.get('mobile')?.touched"
+              class="text-danger">invalid mobile number
+            </div>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="password" name="password" formControlName="password" class="form-control" placeholder="Password" required>
+                    <label for="password">Password</label>
+                    <div *ngIf="this.registerForm.get('password')?.errors && this.registerForm.get('password')?.touched"
+              class="text-danger">invalid password
+            </div>
+                </div>
+
+                <div class="d-grid my-4">
+                    <button class="btn btn-danger" (click)="register()" type="submit" routerLink="/login">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+        <!-- footer -->
+
+        <footer class="bg-dark text-center text-white">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+              <!-- Section: Social media -->
+              <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/login" role="button"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+          
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/i/flow/login?redirect_after_login=%2Flogin" role="button"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+          
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" role="button"
+                  ><i class="fab fa-google"></i
+                ></a>
+          
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/accounts/login/" role="button"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+          
+              
+          
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/" role="button"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </section>
+              <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+          
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+              © 2023 Copyright:
+              <a class="text-white" routerLink="/">Food Hunter</a>
+            </div>
+            <!-- Copyright -->
+          </footer>

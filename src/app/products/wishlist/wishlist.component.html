@@ -1,0 +1,134 @@
+<!-- <p>header works!</p> -->
+
+
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-light  text-white">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand text-dark" routerLink=""><img width="50px" src="https://img.freepik.com/premium-vector/food-hunter-logo-template-design_316488-1781.jpg?w=2000" alt="Nav-logo"> &nbsp; Food <span> Hunter</span> </a>
+        
+        <div class="col-4">
+          <!-- Search -->
+          <!-- <input (keyup)="search($event)" type="text" class="form-control" placeholder="Search your Item"> -->
+        </div>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto my-2 my-lg-0 ">
+                <li class="nav-item "><a class="nav-link" routerLink="/products/all-about">About</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" routerLink="/products/all-services">Services</a></li> -->
+                <li class="nav-item"><a class="nav-link" routerLink="/products/all-portfolio">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/products/all-contact">Contact</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" routerLink="/products/wishlist"><i class="fa-solid fa-heart fa-beat text-danger me-1"></i>Wishlist</a></li> -->
+            </ul>
+          
+          <!-- Cart -->
+            <button class="btn btn-outline-dark" type="submit" routerLink="/products/cart">
+                <i class="fa-solid fa-cart-plus me-1"></i>
+                Cart
+                <span class="badge bg-dark text-danger ms-1 rounded-pill">{{cartItemsCount}}</span>
+              </button>
+        </div>   
+        
+    </div>
+</nav>
+
+
+
+
+
+
+<!-- wishlist empty -->
+<br> 
+<br>
+<div class="container" *ngIf="allwishlistItem.length==0">
+    <div class="row">
+        <div class="col text-center">
+            <img src="https://i.pinimg.com/564x/0a/1c/bc/0a1cbcbdfa1587d8d703a0e620704fe5.jpg" alt="wishlist  empty box image">
+            <button class="btn btn-dark m-3" routerLink="">Explore Now <i class="fa-solid fa-basket-shopping fa-fade"></i></button>
+        </div>
+    </div>
+</div>
+
+
+<!-- wishlist content -->
+<br>
+<br>
+<!-- Section-->
+<section class="py-5" *ngIf="allwishlistItem.length!==0">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="col mb-5" *ngFor="let wish of allwishlistItem">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" [src]="wish.image" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{wish.title}}</h5>
+                            <!-- Product price-->
+                            ${{wish.price}}
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer d-flex justify-content-between bg-transparent">
+                        <button (click)="deletewishlist(wish.id)" class="btn btn-outline-dark mt-auto text-center"> Remove Wishlist</button>
+                        <button (click)="addToCart(wish)" class="btn btn-outline-dark mt-auto text-center" >  Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+        <!-- footer -->
+
+        <footer class="bg-dark text-center text-white">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+              <!-- Section: Social media -->
+              <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/login" role="button"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+          
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/i/flow/login?redirect_after_login=%2Flogin" role="button"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+          
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" role="button"
+                  ><i class="fab fa-google"></i
+                ></a>
+          
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/accounts/login/" role="button"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+          
+              
+          
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/" role="button"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </section>
+              <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+          
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+              © 2023 Copyright:
+              <a class="text-white" routerLink="/">Food Hunter</a>
+            </div>
+            <!-- Copyright -->
+          </footer>

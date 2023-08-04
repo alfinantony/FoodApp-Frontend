@@ -1,0 +1,133 @@
+/* General Styles */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  /* Navigation Styles */
+  
+  .navbar {
+    background-color: #0000005a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .navbar-brand img {
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-item {
+    margin-left: 15px;
+  }
+  
+  .nav-link {
+    color: #ffffff;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  
+  .btn-primary {
+    background-color: #000000;
+    border-color: #000000;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .navbar-brand:hover{
+    font-family: 'Kablammo', cursive;
+    transform: scale(1.2);
+}
+
+.navbar-nav .nav-link:hover{
+    font-weight: bolder;
+    /* color:  #f9004d; */
+    transform: scale(1.2);
+}
+
+span{
+    color: #f9004d;
+    font-family: 'Kablammo', cursive;
+    
+}
+
+.wish:hover{
+    color: #f9004d;  
+}
+
+  
+  /* Header Styles */
+  
+  .masthead {
+    background-image: url('https://i.pinimg.com/564x/31/20/da/3120da9bc83289c63c6f50d136de71c7.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 200px 0;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .masthead-subheading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .masthead-heading {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  
+
+.team-member {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  .team-member img {
+    width: 14rem;
+    height: 14rem;
+    border: 0.5rem solid rgba(0, 0, 0, 0.1);
+  }
+  .team-member h4, .team-member .h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+  
+  .img-brand {
+    height: 2.75rem;
+  }
+
+
+  

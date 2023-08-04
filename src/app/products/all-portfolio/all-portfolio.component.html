@@ -1,0 +1,205 @@
+<!-- <p>header works!</p> -->
+
+
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-light  text-white">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand text-dark" routerLink=""><img width="50px" src="https://img.freepik.com/premium-vector/food-hunter-logo-template-design_316488-1781.jpg?w=2000" alt="Nav-logo"> &nbsp; Food <span> Hunter</span> </a>
+        
+        <div class="col-4">
+          <!-- Search -->
+          <!-- <input (keyup)="search($event)" type="text" class="form-control" placeholder="Search your Item"> -->
+        </div>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto my-2 my-lg-0 ">
+                <li class="nav-item "><a class="nav-link" routerLink="/products/all-about">About</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/products/all-contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/products/wishlist"><i class="fa-solid fa-heart fa-beat text-danger me-1"></i>Favorite</a></li>
+            </ul>
+          
+          <!-- Cart -->
+            <button class="btn btn-outline-dark" type="submit" routerLink="/products/cart">
+                <i class="fa-solid fa-cart-plus me-1"></i>
+                Cart
+                <span class="badge bg-dark text-danger ms-1 rounded-pill">0</span>
+              </button>
+        </div>   
+        
+    </div>
+</nav>
+
+
+
+<br>
+<br>
+<br>
+
+
+<!-- ======= Menu Section ======= -->
+<section id="menu" class="menu section-bg">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Menu</h2>
+      <p>Check Our Tasty Menu</p>
+    </div>
+
+    <!-- <div class="row" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-12 d-flex justify-content-center">
+        <ul id="menu-flters">
+          <li data-filter="*" class="filter-active">All</li>
+          <li data-filter=".filter-starters">Starters</li>
+          <li data-filter=".filter-salads">Salads</li>
+          <li data-filter=".filter-specialty">Specialty</li>
+        </ul>
+      </div>
+    </div> -->
+
+    <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+
+      <div class="col-lg-6 menu-item filter-starters">
+        <img src="https://i.pinimg.com/736x/bb/e6/f3/bbe6f376d77adb3b4a3c2c9b56cfbaf7.jpg" class="menu-img" alt="">
+        <div class="menu-content">
+          <a href="#">Lobster Bisque</a><span>Rs/- 1300</span>
+        </div>
+        <div class="menu-ingredients">
+          Lorem, deren, trataro, filede, nerada
+        </div>
+      </div>
+ 
+
+      <div class="col-lg-6 menu-item filter-specialty">
+        <img src="https://i.pinimg.com/564x/0e/6c/c6/0e6cc6d665b8bdbbbce278eb22da074d.jpg" class="menu-img" alt="">
+        <div class="menu-content">
+          <a href="#">Bread Barrel</a><span>Rs/- 900</span>
+        </div>
+        <div class="menu-ingredients">
+          Lorem, deren, trataro, filede, nerada
+        </div>
+      </div>
+
+      <div class="col-lg-6 menu-item filter-starters">
+        <img src="https://i.pinimg.com/564x/a4/e5/78/a4e578653b18c67566e57568dfa27b47.jpg" class="menu-img" alt="">
+        <div class="menu-content">
+          <a href="#">Crab Cake</a><span>Rs/- 1000</span>
+        </div>
+        <div class="menu-ingredients">
+          A delicate crab cake served on a toasted roll with lettuce and tartar sauce
+        </div>
+      </div>
+
+      <div class="col-lg-6 menu-item filter-salads">
+        <img src="https://i.pinimg.com/564x/07/b3/fa/07b3fa5f80454a92f323140a4504ad23.jpg" class="menu-img" alt="">
+        <div class="menu-content">
+          <a href="#">Caesar Selections</a><span>Rs/- 900</span>
+        </div>
+        <div class="menu-ingredients">
+          Lorem, deren, trataro, filede, nerada
+        </div>
+      </div>
+
+      <div class="col-lg-6 menu-item filter-specialty">
+        <img src="https://i.pinimg.com/564x/a6/3b/3c/a63b3c2eaa9986e12bc6bb864bc5aa00.jpg" class="menu-img" alt="">
+        <div class="menu-content">
+          <a href="#">Tuscan Grilled</a><span>Rs/-1200</span>
+        </div>
+        <div class="menu-ingredients">
+          Grilled chicken with provolone, artichoke hearts, and roasted red pesto
+        </div>
+      </div>
+
+      <div class="col-lg-6 menu-item filter-starters">
+        <img src="https://i.pinimg.com/564x/b7/96/d6/b796d636c0055dda3875ff0ba1bd2cef.jpg" class="menu-img" alt="">
+        <div class="menu-content">
+          <a href="#">Mozzarella Stick</a><span>Rs/- 800</span>
+        </div>
+        <div class="menu-ingredients">
+          Lorem, deren, trataro, filede, nerada
+        </div>
+      </div>
+
+      <div class="col-lg-6 menu-item filter-salads">
+        <img src="https://i.pinimg.com/564x/18/a9/c2/18a9c20455aa09f104bfa34b1fbb0a7a.jpg" class="menu-img" alt="">
+        <div class="menu-content">
+          <a href="#">Greek Salad</a><span>Rs/- 899</span>
+        </div>
+        <div class="menu-ingredients">
+          Fresh spinach, crisp romaine, tomatoes, and Greek olives
+        </div>
+      </div>
+
+      <div class="col-lg-6 menu-item filter-salads">
+        <img src="https://i.pinimg.com/564x/ee/97/e0/ee97e0b64ac8067039a98ca092d70523.jpg" class="menu-img" alt="">
+        <div class="menu-content">
+          <a href="#">Spinach Salad</a><span>Rs/- 999</span>
+        </div>
+        <div class="menu-ingredients">
+          Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette
+        </div>
+      </div>
+
+      <div class="col-lg-6 menu-item filter-specialty">
+        <img src="https://i.pinimg.com/564x/0d/73/46/0d7346df9a10467710086bb177da1b1f.jpg" class="menu-img" alt="">
+        <div class="menu-content">
+          <a href="#">Lobster Roll</a><span>Rs/- 762</span>
+        </div>
+        <div class="menu-ingredients">
+          Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+  
+        <!-- footer -->
+
+        <footer class="bg-dark text-center text-white">
+          <!-- Grid container -->
+          <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+              <!-- Facebook -->
+              <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/login" role="button"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+        
+              <!-- Twitter -->
+              <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/i/flow/login?redirect_after_login=%2Flogin" role="button"
+                ><i class="fab fa-twitter"></i
+              ></a>
+        
+              <!-- Google -->
+              <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" role="button"
+                ><i class="fab fa-google"></i
+              ></a>
+        
+              <!-- Instagram -->
+              <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/accounts/login/" role="button"
+                ><i class="fab fa-instagram"></i
+              ></a>
+        
+            
+        
+              <!-- Github -->
+              <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/" role="button"
+                ><i class="fab fa-github"></i
+              ></a>
+            </section>
+            <!-- Section: Social media -->
+          </div>
+          <!-- Grid container -->
+        
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
+            <a class="text-white" routerLink="/">Food Hunter</a>
+          </div>
+          <!-- Copyright -->
+        </footer>

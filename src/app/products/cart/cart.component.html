@@ -1,0 +1,359 @@
+<!-- <p>header works!</p> -->
+
+
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light  text-white">
+  <div class="container px-4 px-lg-5">
+    <a class="navbar-brand text-dark" routerLink=""><img width="50px"
+        src="https://img.freepik.com/premium-vector/food-hunter-logo-template-design_316488-1781.jpg?w=2000"
+        alt="Nav-logo"> &nbsp; Food <span> Hunter</span> </a>
+
+    <div class="col-4">
+      <!-- Search -->
+      <!-- <input (keyup)="search($event)" type="text" class="form-control" placeholder="Search your Item"> -->
+    </div>
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto my-2 my-lg-0 ">
+        <li class="nav-item "><a class="nav-link" routerLink="/products/all-about">About</a></li>
+        <!-- <li class="nav-item"><a class="nav-link" routerLink="/products/all-services">Services</a></li> -->
+        <li class="nav-item"><a class="nav-link" routerLink="/products/all-portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/products/all-contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/products/wishlist"><i
+              class="fa-solid fa-heart fa-beat text-danger me-1"></i>Favorite</a></li>
+      </ul>
+
+      <!-- Cart -->
+      <button class="btn btn-outline-dark" type="submit" routerLink="/products/cart">
+        <i class="fa-solid fa-cart-plus me-1"></i>
+        Cart
+        <span class="badge bg-dark text-danger ms-1 rounded-pill">{{cartItemsCount}}</span>
+      </button>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+
+
+<!-- empty cart -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container" *ngIf="allCart.length==0">
+  <div class="row">
+    <div class="col text-center">
+      <!-- empty cart image -->
+
+      <img height="400px" src="https://i.pinimg.com/564x/2e/ac/fa/2eacfa305d7715bdcd86bb4956209038.jpg"
+        alt="empty cart">
+      <!-- button -->
+      <div></div>
+      <button class="btn btn-dark mb-2" routerLink="">Shop More</button>
+    </div>
+  </div>
+</div>
+
+<!-- cart with content -->
+
+
+<div class="container1" *ngIf="allCart.length !== 0">
+  <div class="row">
+    <div class="col-8">
+      <!-- Cart table -->
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th> Id</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cart of allCart; let i=index">
+            <td>{{i+1}}</td>
+            <td><img src="{{cart.image}}" alt="Product Image" class="product-image"></td>
+            <td>{{cart.title}}</td>
+
+            <!-- to add nd reduce the quantity of cart -->
+            <div class="d-flex flex-row">
+
+              <td><input type="text" [value]="cart.quantity" class="form-control" readonly></td>
+              <button class="btn dw-folder" (click)="decrementCart(cart.id)"><b>-</b></button>
+              <button class="btn dw-folder" (click)="incrementCart(cart.id)"><b>+</b> </button>
+            </div>
+            <td>{{cart.grandTotal}}</td>
+            <td><i class="fa-sharp fa-solid fa-trash" (click)="removeCartItem(cart.id)"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+    <div class="col-3">
+      <h1 class="promo-title">Promo Code</h1>
+      <h2 class="promo-code">HUNTER50</h2>
+      <h3 class="promo-discount">Discount: 50% (Till September)</h3>
+      <h4>price: {{totalPrice}}</h4>
+
+      <hr>
+
+      <div class="text-center">
+        <button class="btn btn-dark m-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">check Out</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Check Out Details</h1>
+        <button  (click)="modalClose()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3 *ngIf="!paymentStatus" class="text-center">Enter Your Address Details</h3>
+
+        <form *ngIf="!paymentStatus" [formGroup]="addressForm" (ngSubmit)="submitForm()">
+          <div class="form-floating mb-3">
+            <input name="username" formControlName="username" type="text" class="form-control" id="floatingInput"
+              placeholder="Enter your name" required>
+            <div *ngIf="this.addressForm.get('username')?.errors && this.addressForm.get('username')?.touched"
+              class="text-danger"> Invalid data</div>
+
+            <label for="floatingInput">Enter your name</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input name="houseNumber" formControlName="houseNumber" type="text" class="form-control" id="floatingInput"
+              placeholder="House number" required>
+            <div *ngIf="this.addressForm.get('houseNumber')?.errors && this.addressForm.get('houseNumber')?.touched"
+              class="text-danger"> Invalid data</div>
+
+            <label for="floatingInput">House number</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input name="street" formControlName="street" type="text" class="form-control" id="floatingInput"
+              placeholder="Street name" required>
+            <div *ngIf="this.addressForm.get('street')?.errors && this.addressForm.get('street')?.touched"
+              class="text-danger"> Invalid data</div>
+
+            <label for="floatingInput">Street name</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input name="state" formControlName="state" type="text" class="form-control" id="floatingInput"
+              placeholder="State" required>
+            <div *ngIf="this.addressForm.get('state')?.errors && this.addressForm.get('state')?.touched"
+              class="text-danger"> Invalid data</div>
+
+            <label for="floatingInput">State</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input name="pincode" formControlName="pincode" type="number" class="form-control" id="floatingInput"
+              placeholder="Pincode" required>
+            <div *ngIf="this.addressForm.get('pincode')?.errors && this.addressForm.get('pincode')?.touched"
+              class="text-danger"> Invalid data</div>
+
+            <label for="floatingInput">Pincode</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input name="mobileNumber" formControlName="mobileNumber" type="number" class="form-control"
+              id="floatingInput" placeholder="Mobile number" required>
+            <div *ngIf="this.addressForm.get('mobileNumber')?.errors && this.addressForm.get('mobileNumber')?.touched"
+              class="text-danger"> Invalid data</div>
+
+            <label for="floatingInput">Mobile number</label>
+          </div>
+
+          <hr>
+          <div>
+            <h2 class="text-dark"><b>Total Amount: {{totalPrice}}</b></h2>
+            <h3 (click)="offerClicked()" class="text-danger"><b>Offers:</b> </h3>
+          </div>
+
+          <!-- discount -->
+
+          <!-- discount 1 -->
+
+          <div *ngIf="offerClick && !discountStatus">
+          <div class="container bg-white">
+            <div class="row">
+              <div class="col-md-5">
+                <div id="left">
+                  <div id="image-section">
+                    <img *ngIf="totalPrice>2000" (click)="discount(50)" src="https://cdn.icon-icons.com/icons2/2621/PNG/512/gui_discount_icon_157170.png" alt="">
+                  </div>
+                  <div class="brand">
+                    <div id="coupon">
+                      <div class="h4 text-uppercase">coupon</div>
+                    </div>
+                    <h1 class="text-uppercase">world50</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div id="line"></div>
+              </div>
+              <div class="col-md-5 col-sm-12">
+                <div class="h3 text-uppercase pt-md-4" id="offer">up to 50% off</div>
+                <div id="offer-description">
+                  <p>Tap offer to copy the coupon code</p>
+                  <p>Remember to paste when you checkout</p>
+                </div>
+                <div id="expiry" class="font-weight-bold">
+                  <div class="px-3">Valid up to</div>
+                  <div class="px-3">September 10</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- discount 2 -->
+
+          <div class="container bg-white">
+            <div class="row">
+              <div class="col-md-5">
+                <div id="left">
+                  <div id="image-section">
+                    <img *ngIf="totalPrice>1000" (click)="discount(10)" src="https://cdn.icon-icons.com/icons2/2621/PNG/512/gui_discount_icon_157170.png" alt="">
+                  </div>
+                  <div class="brand">
+                    <div id="coupon">
+                      <div class="h4 text-uppercase">coupon</div>
+                    </div>
+                    <h1 class="text-uppercase">Pizza10</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div id="line"></div>
+              </div>
+              <div class="col-md-5 col-sm-12">
+                <div class="h3 text-uppercase pt-md-4" id="offer">up to 10% off</div>
+                <div id="offer-description">
+                  <p>Tap offer to copy the coupon code</p>
+                  <p>Remember to paste when you checkout</p>
+                </div>
+                <div id="expiry" class="font-weight-bold">
+                  <div class="px-3">Valid up to</div>
+                  <div class="px-3">September 10</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div> 
+
+
+
+          <!-- payment method -->
+
+          <hr>
+
+          <div class="text-center">
+            <button class="btn btn-dark m-4">Make Payment</button>
+          </div>
+
+
+        </form>
+
+        <!-- user details -->
+        <div *ngIf="paymentStatus">
+          <p>{{username}}</p>
+          <p>{{houseNumber}}</p>
+          <p>{{pincode}}</p>
+          <p>{{mobileNumber}}</p>
+          <hr>
+          <div class="text-center">
+            <button (click)="makepay()" class="btn btn-dark">Proceed To Pay </button>
+          </div>
+
+          <br>
+          <br>
+
+          <div *ngIf="proceedtopay">
+          <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+        </div>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- footer -->
+
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/login" role="button"><i
+          class="fab fa-facebook-f"></i></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1"
+        href="https://twitter.com/i/flow/login?redirect_after_login=%2Flogin" role="button"><i
+          class="fab fa-twitter"></i></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" role="button"><i
+          class="fab fa-google"></i></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/accounts/login/"
+        role="button"><i class="fab fa-instagram"></i></a>
+
+
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/" role="button"><i
+          class="fab fa-github"></i></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright:
+    <a class="text-white" routerLink="/">Food Hunter</a>
+  </div>
+  <!-- Copyright -->
+</footer>

@@ -1,0 +1,31 @@
+.navbar{
+    position: sticky;
+    top: 0px;
+    background-color: whitesmoke;
+    z-index: 1;
+}
+
+.navbar-brand{
+    font-family: 'Kablammo', cursive; 
+}
+.navbar-brand:hover{
+    font-family: 'Kablammo', cursive;
+    transform: scale(1.2);
+}
+
+.navbar-nav .nav-link:hover{
+    font-weight: bolder;
+    color:  #f9004d;
+    transform: scale(1.2);
+}
+
+span{
+    color: #f9004d;
+    font-family: 'Kablammo', cursive;
+    
+}
+
+.wish:hover{
+    color: #f9004d;  
+}
+

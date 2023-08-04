@@ -1,0 +1,67 @@
+   <!-- Navigation-->
+   <nav class="navbar navbar-expand-lg navbar-light  text-white">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand text-white" routerLink="/mainpage"><img width="50px" src="https://img.freepik.com/premium-vector/food-hunter-logo-template-design_316488-1781.jpg?w=2000" alt="Nav-logo"> &nbsp; Food <span> Hunter</span> </a>
+        
+        &nbsp; &nbsp; 
+        <div class="col-4">
+          <!-- Search -->
+          <!-- <input (keyup)="search($event)" type="text" class="form-control" placeholder="Search your Item"> -->
+        </div>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto my-2 my-lg-0 ">
+                <li class="nav-item "><a class="nav-link" routerLink="/products/all-about">About</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" routerLink="/products/all-services">Services</a></li> -->
+                <li class="nav-item"><a class="nav-link" routerLink="/products/all-portfolio">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/products/all-contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/products/wishlist"><i class="fa-solid fa-heart fa-beat text-danger me-1"></i>Favorite</a></li>
+            </ul>
+          
+          <!-- Cart -->
+            <button class="btn btn-outline-dark" type="submit" routerLink="/products/cart">
+                <i class="fa-solid fa-cart-plus me-1"></i>
+                Cart
+                <span class="badge bg-dark text-danger ms-1 rounded-pill">{{cartItemsCount}}</span>
+              </button>
+        </div>   
+        
+    </div>
+</nav>
+
+
+
+
+  
+  
+  
+  <!-- Product section-->
+  <section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img class="card-img-top" [src]="product.image" alt="..." /></div>
+            <div class="col-md-6">
+                <!-- <div class="small mb-1">ID:{{product._id}}</div> -->
+                <h1 class="display-5 fw-bolder">{{product.title}}</h1>
+                <div class="fs-5 mb-5">
+                    <span>${{product.price}}</span>
+                    <!-- <span class="text-decoration-line-through">${{product.price}}</span> -->
+
+                    <!-- <span>$40.00</span> -->
+                </div>
+                <p class="lead" style="text-align: justify;"> {{product.description}}</p>
+                <div class="d-flex">
+                    <button (click)="addToWishlist()" class="btn btn-outline-dark flex-shrink-0" type="button">
+                        <i class="fa-solid fa-heart fa-beat text-danger me-1"></i>
+                        Add to Favorite
+                    </button> &nbsp; &nbsp; &nbsp;
+                    <button (click)="addTocart(product)" class="btn btn-outline-dark flex-shrink-0" type="button">
+                        <i class="fa-solid fa-cart-plus me-1"></i>
+                        Add to cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
